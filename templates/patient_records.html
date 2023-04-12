@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Patient Management System using Blockchain</title>
+  </head>
+  <body>
+    <h1>Records for Patient: {{ name }}</h1>
+    {% if all_records %}
+      <table>
+        <tr>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Medical History</th>
+          <th>Timestamp</th>
+          <th>Hash</th>
+        </tr>
+        {% for block in all_records %}
+          <tr>
+            <td>{{ block.index }}</td>
+            <td>{{ block.name }}</td>
+            <td>{{ block.age }}</td>
+            <td>{{ block.medical_history }}</td>
+            <td>{{ block.timestamp }}</td>
+            <td>{{ block.hash }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No records found for this patient.</p>
+    {% endif %}
+  </body>
+</html>

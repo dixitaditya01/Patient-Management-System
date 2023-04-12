@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blockchain Viewer</title>
+  </head>
+  <body>
+    <h1>Blockchain Viewer</h1>
+    <table>
+      <tr>
+        <th>Timestamp</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Medical History</th>
+        <th>Hash</th>
+        <th>Previous Hash</th>
+      </tr>
+      {% for block in blockchain %}
+      <tr>
+        <td>{{ block.timestamp }}</td>
+        <td>{{ block.name }}</td>
+        <td>{{ block.age }}</td>
+        <td>{{ block.medical_history }}</td>
+        <td>{{ block.hash }}</td>
+        <td>{{ block.previous_hash }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
