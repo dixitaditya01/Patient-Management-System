@@ -73,9 +73,13 @@ def get_history():
         if block.uid == uid:
             history.append(block)
         else:
-            return 'Record not found.'
+            continue    
+    if len(history)>=1:
+        return render_template('patient_records.html', all_records=history)
+    else:
+        return 'Record not found.'
     
-    return render_template('patient_records.html', all_records=history)
+    
 
 # returning landing page
 @app.route('/')
